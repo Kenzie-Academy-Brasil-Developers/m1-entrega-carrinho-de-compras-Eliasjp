@@ -103,6 +103,8 @@ const productsCart = [
 ]
 
 let body          = document.querySelector(`body`)
+let h1            = document.createElement(`h1`)
+let divh1         = document.createElement(`div`)
 let main          = document.createElement(`main`)
 let span          = document.createElement(`span`)
 let pSpanItem     = document.createElement(`p`)
@@ -115,6 +117,7 @@ let pSectionSoma  = document.createElement(`p`)
 let button        = document.createElement(`button`)
 let pButton       = document.createElement(`p`)
 
+divh1.classList.add(`divh1`)
 pSpanItem.classList.add(`pSpanItem`)
 pSpanPreco.classList.add(`pSpanPreco`)
 sectionList.classList.add(`sectionItens`)
@@ -124,13 +127,15 @@ pSectionSoma.classList.add(`pSectionSoma`)
 button.classList.add(`finalizar`)
 pButton.classList.add(`pButton`)
 
+h1.innerText            = `Virtual Market`
 pSpanItem.innerText     = `Item`
 pSpanPreco.innerText    = `Preço`
 pSectionTotal.innerText = `Total`
 pSectionSoma.innerText  = `R$: ${somaItems(productsCart)}`
 pButton.innerText       = `Finalizar Compra`
 
-body.append(main)
+body.append(divh1, main)
+divh1.append(h1)
 main.append(span, sectionList, sectionSoma, button)
 span.append(pSpanItem, pSpanPreco)
 sectionList.append(ul)
